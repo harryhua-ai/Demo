@@ -1,0 +1,97 @@
+/* 
+ * English localization strings for Notepad++
+ */
+
+/* Menu Items */
+"menu_file" = "File";
+"menu_new" = "New";
+"menu_open" = "Open...";
+"menu_save" = "Save";
+"menu_save_as" = "Save As...";
+"menu_close" = "Close";
+"menu_print" = "Print...";
+"menu_page_setup" = "Page Setup...";
+"menu_exit" = "Exit";
+
+"menu_edit" = "Edit";
+"menu_undo" = "Undo";
+"menu_redo" = "Redo";
+"menu_cut" = "Cut";
+"menu_copy" = "Copy";
+"menu_paste" = "Paste";
+"menu_delete" = "Delete";
+"menu_select_all" = "Select All";
+"menu_find" = "Find...";
+"menu_replace" = "Replace...";
+"menu_go_to_line" = "Go to Line...";
+
+"menu_view" = "View";
+"menu_show_line_numbers" = "Show Line Numbers";
+"menu_show_white_space" = "Show White Space";
+"menu_toggle_dark_mode" = "Toggle Dark Mode";
+"menu_zoom_in" = "Zoom In";
+"menu_zoom_out" = "Zoom Out";
+"menu_reset_zoom" = "Reset Zoom";
+"menu_full_screen" = "Enter Full Screen";
+
+"menu_language" = "Language";
+"menu_encoding" = "Encoding";
+
+"menu_plugins" = "Plugins";
+
+/* Dialog Titles */
+"find_dialog_title" = "Find";
+"replace_dialog_title" = "Replace";
+"go_to_line_title" = "Go to Line";
+"preferences_title" = "Preferences";
+
+/* Buttons */
+"button_ok" = "OK";
+"button_cancel" = "Cancel";
+"button_apply" = "Apply";
+"button_find_next" = "Find Next";
+"button_replace" = "Replace";
+"button_replace_all" = "Replace All";
+"button_go" = "Go";
+"button_close" = "Close";
+
+/* Labels */
+"label_find" = "Find:";
+"label_replace_with" = "Replace with:";
+"label_go_to_line" = "Line number:";
+"label_match_case" = "Match case";
+"label_match_whole_word" = "Match whole word";
+"label_regular_expression" = "Regular expression";
+"label_wrap_around" = "Wrap around";
+
+/* Placeholders */
+"placeholder_line_number" = "Line number";
+
+/* Messages */
+"message_invalid_line_number" = "Invalid line number";
+"message_line_number_greater_than_zero" = "Line number must be greater than 0";
+"message_line_number_less_than_max" = "Line number must be less than or equal to %ld";
+
+/* Preferences Tabs */
+"preferences_general" = "General";
+"preferences_editor" = "Editor";
+"preferences_view" = "View";
+"preferences_shortcuts" = "Shortcuts";
+
+/* Preferences General */
+"preferences_auto_save_documents" = "Auto-save documents";
+"preferences_restore_last_session" = "Restore last session";
+
+/* Preferences Editor */
+"preferences_tab_width" = "Tab Width:";
+"preferences_insert_spaces_instead_of_tabs" = "Insert spaces instead of tabs";
+"preferences_show_line_numbers" = "Show line numbers";
+"preferences_show_white_space" = "Show white space";
+"preferences_font_size" = "Font Size:";
+"preferences_font_family" = "Font Family:";
+
+/* Preferences View */
+"preferences_wrap_lines" = "Wrap lines";
+"preferences_show_menu_bar" = "Show menu bar";
+"preferences_show_tool_bar" = "Show tool bar";
+"preferences_show_status_bar" = "Show status bar";
