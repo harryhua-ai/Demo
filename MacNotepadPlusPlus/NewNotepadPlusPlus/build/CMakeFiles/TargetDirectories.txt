@@ -1,0 +1,3 @@
+/Users/harryhua/Documents/GitHub/Demo/MacNotepadPlusPlus/NewNotepadPlusPlus/build/CMakeFiles/Simplepad.dir
+/Users/harryhua/Documents/GitHub/Demo/MacNotepadPlusPlus/NewNotepadPlusPlus/build/CMakeFiles/edit_cache.dir
+/Users/harryhua/Documents/GitHub/Demo/MacNotepadPlusPlus/NewNotepadPlusPlus/build/CMakeFiles/rebuild_cache.dir

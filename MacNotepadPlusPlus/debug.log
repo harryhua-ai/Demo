@@ -1,0 +1,43 @@
+2025-12-25 21:59:54.373 Notepad++[13129:1361459] NotepadDocument: Document initialized with text: New document
+2025-12-25 21:59:54.373 Notepad++[13129:1361459] NotepadDocument: makeWindowControllers started
+2025-12-25 21:59:54.373 Notepad++[13129:1361459] NotepadDocumentWindowController: initWithDocument started
+2025-12-25 21:59:54.397 Notepad++[13129:1361459] NotepadDocumentWindowController: Window created with frame: {{100, 100}, {800, 600}}
+2025-12-25 21:59:54.401 Notepad++[13129:1361459] NotepadDocumentWindowController: Managers initialized
+2025-12-25 21:59:54.402 Notepad++[13129:1361459] NotepadDocumentWindowController: createStatusBar completed
+2025-12-25 21:59:54.406 Notepad++[13129:1361459] ScintillaView: Unsupported message: 2051
+2025-12-25 21:59:54.406 Notepad++[13129:1361459] ScintillaView: Unsupported message: 2052
+2025-12-25 21:59:54.412 Notepad++[13129:1361459] NotepadDocument: Document initialized with text: New document
+2025-12-25 21:59:54.412 Notepad++[13129:1361459] NotepadDocument: makeWindowControllers started
+2025-12-25 21:59:54.412 Notepad++[13129:1361459] NotepadDocumentWindowController: initWithDocument started
+2025-12-25 21:59:54.415 Notepad++[13129:1361459] NotepadDocumentWindowController: Window created with frame: {{100, 100}, {800, 600}}
+2025-12-25 21:59:54.417 Notepad++[13129:1361459] NotepadDocumentWindowController: Managers initialized
+2025-12-25 21:59:54.417 Notepad++[13129:1361459] NotepadDocumentWindowController: createStatusBar completed
+2025-12-25 21:59:54.417 Notepad++[13129:1361459] ScintillaView: Unsupported message: 2051
+2025-12-25 21:59:54.417 Notepad++[13129:1361459] ScintillaView: Unsupported message: 2052
+2025-12-25 21:59:54.420 Notepad++[13129:1361459] AppDelegate: applicationDidFinishLaunching started
+2025-12-25 21:59:54.420 Notepad++[13129:1361459] AppDelegate: Initializing managers
+2025-12-25 21:59:54.420 Notepad++[13129:1361459] PluginManager: Plugin loading temporarily disabled
+2025-12-25 22:00:36.946 Notepad++[13129:1361459] NotepadDocument: Document initialized with text: New document
+2025-12-25 22:00:36.946 Notepad++[13129:1361459] NotepadDocument: makeWindowControllers started
+2025-12-25 22:00:36.946 Notepad++[13129:1361459] NotepadDocumentWindowController: initWithDocument started
+2025-12-25 22:00:36.949 Notepad++[13129:1361459] NotepadDocumentWindowController: Window created with frame: {{100, 100}, {800, 600}}
+2025-12-25 22:00:36.951 Notepad++[13129:1361459] NotepadDocumentWindowController: Managers initialized
+2025-12-25 22:00:36.952 Notepad++[13129:1361459] NotepadDocumentWindowController: createStatusBar completed
+2025-12-25 22:00:36.952 Notepad++[13129:1361459] ScintillaView: Unsupported message: 2051
+2025-12-25 22:00:36.952 Notepad++[13129:1361459] ScintillaView: Unsupported message: 2052
+2025-12-25 22:00:38.014 Notepad++[13129:1361459] NotepadDocument: Document initialized with text: New document
+2025-12-25 22:00:38.014 Notepad++[13129:1361459] NotepadDocument: makeWindowControllers started
+2025-12-25 22:00:38.014 Notepad++[13129:1361459] NotepadDocumentWindowController: initWithDocument started
+2025-12-25 22:00:38.017 Notepad++[13129:1361459] NotepadDocumentWindowController: Window created with frame: {{100, 100}, {800, 600}}
+2025-12-25 22:00:38.017 Notepad++[13129:1361459] NotepadDocumentWindowController: Managers initialized
+2025-12-25 22:00:38.018 Notepad++[13129:1361459] NotepadDocumentWindowController: createStatusBar completed
+2025-12-25 22:00:38.018 Notepad++[13129:1361459] ScintillaView: Unsupported message: 2051
+2025-12-25 22:00:38.018 Notepad++[13129:1361459] ScintillaView: Unsupported message: 2052
+2025-12-25 22:00:42.867 Notepad++[13129:1361459] NotepadDocument: Document initialized with text: New document
+2025-12-25 22:00:42.867 Notepad++[13129:1361459] NotepadDocument: makeWindowControllers started
+2025-12-25 22:00:42.867 Notepad++[13129:1361459] NotepadDocumentWindowController: initWithDocument started
+2025-12-25 22:00:42.871 Notepad++[13129:1361459] NotepadDocumentWindowController: Window created with frame: {{100, 100}, {800, 600}}
+2025-12-25 22:00:42.872 Notepad++[13129:1361459] NotepadDocumentWindowController: Managers initialized
+2025-12-25 22:00:42.873 Notepad++[13129:1361459] NotepadDocumentWindowController: createStatusBar completed
+2025-12-25 22:00:42.873 Notepad++[13129:1361459] ScintillaView: Unsupported message: 2051
+2025-12-25 22:00:42.873 Notepad++[13129:1361459] ScintillaView: Unsupported message: 2052

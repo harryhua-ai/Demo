@@ -20,6 +20,7 @@ set(CMAKE_OBJCXX_FLAGS "${CMAKE_OBJCXX_FLAGS} -fobjc-arc")
 find_library(COCOA_FRAMEWORK Cocoa)
 find_library(APPKIT_FRAMEWORK AppKit)
 find_library(FOUNDATION_FRAMEWORK Foundation)
+find_library(UNIFORMTYPEIDENTIFIERS_FRAMEWORK UniformTypeIdentifiers)
 
 # Scintilla source files
 file(GLOB SCINTILLA_SOURCES 
@@ -85,6 +86,7 @@ target_link_libraries(NotepadPlusPlus
     ${COCOA_FRAMEWORK}
     ${APPKIT_FRAMEWORK}
     ${FOUNDATION_FRAMEWORK}
+    ${UNIFORMTYPEIDENTIFIERS_FRAMEWORK}
 )
 
 # 复制非本地化资源文件
@@ -117,7 +119,7 @@ foreach(LOCALIZATION_DIR ${LOCALIZATION_DIRS})
             $<TARGET_FILE_DIR:NotepadPlusPlus>/../Resources/${LANG_NAME})
         add_custom_command(TARGET NotepadPlusPlus POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            ${CMAKE_CURRENT_SOURCE_DIR}/${LOCALIZATION_FILE}
+            ${LOCALIZATION_FILE}
             $<TARGET_FILE_DIR:NotepadPlusPlus>/../Resources/${LANG_NAME}/${FILE_NAME})
     endforeach()
 endforeach()

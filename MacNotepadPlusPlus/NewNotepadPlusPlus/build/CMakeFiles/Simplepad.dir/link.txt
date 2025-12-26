@@ -1,0 +1,1 @@
+/usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/Simplepad.dir/SimpleTextEditor.m.o -o Simplepad.app/Contents/MacOS/Simplepad  -framework Cocoa -framework AppKit -framework Foundation
