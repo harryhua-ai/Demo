@@ -1,0 +1,70 @@
+{
+  "name": "ido",
+  "version": "1.0.0",
+  "main": "./out/main/index.js",
+  "productName": "IDo",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "Harry Hua <harry@ido.app>",
+  "homepage": "https://ido.app",
+  "license": "ISC",
+  "description": "IDo - 清新待办，一款专注于极简体验与高效执行的跨平台任务管理应用。",
+  "dependencies": {
+    "@electron-toolkit/utils": "^4.0.0",
+    "better-sqlite3": "^12.5.0",
+    "canvas": "^3.2.0",
+    "framer-motion": "^12.24.12",
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.3",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^19.2.3",
+    "zustand": "^5.0.9"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
+    "electron": "^39.2.7",
+    "electron-builder": "^26.4.0",
+    "electron-devtools-installer": "^4.0.0",
+    "electron-rebuild": "^3.2.9",
+    "electron-vite": "^5.0.0",
+    "vite": "^7.3.1"
+  },
+  "build": {
+    "appId": "com.hhy.ido",
+    "productName": "IDo",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*",
+      "resources/**/*"
+    ],
+    "mac": {
+      "icon": "resources/icon.png",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "icon": "resources/icon.png",
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    },
+    "linux": {
+      "icon": "resources/icon.png",
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    }
+  }
+}
