@@ -1,0 +1,1200 @@
+:root {
+    --bg-primary: #ffffff;
+    --bg-sidebar: #f8f9fa;
+    --bg-item-hover: rgba(0, 0, 0, 0.04);
+    --bg-item-active: #e9ecef;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --text-dim: #999999;
+    --border-color: #eeeeee;
+    --accent: #00bfff;
+    /* 天蓝色 */
+    --accent-light: rgba(0, 191, 255, 0.1);
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #1c1c1e;
+        --bg-sidebar: #2c2c2e;
+        --bg-item-hover: rgba(255, 255, 255, 0.08);
+        --bg-item-active: #3a3a3c;
+        --text-primary: #f2f2f7;
+        --text-secondary: #aeaeb2;
+        --text-dim: #636366;
+        --border-color: #38383a;
+        --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: transparent;
+    color: var(--text-primary);
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 240px;
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+    padding: 0 12px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* 减小间距，为品牌留白 */
+    -webkit-app-region: drag;
+}
+
+.brand-area {
+    padding: 45px 14px 12px;
+    /* 考虑 macOS 信号灯避让 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    -webkit-app-region: drag;
+}
+
+.brand-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Logo 与文字紧凑并排 */
+}
+
+.brand-logo {
+    width: 24px;
+    /* 极致缩小，更精致 */
+    height: 24px;
+    background: linear-gradient(135deg, #00bfff, #0099ff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+    box-shadow: 0 4px 8px rgba(0, 191, 255, 0.25);
+    flex-shrink: 0;
+}
+
+.refresh-btn {
+    opacity: 0.3;
+    cursor: pointer;
+    transition: all 0.2s;
+    -webkit-app-region: no-drag;
+    margin-left: auto;
+    /* 绝对靠右 */
+}
+
+.refresh-btn:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+.brand-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+.sidebar-icon:hover {
+    color: var(--accent);
+}
+
+.rotating {
+    animation: rotate 0.6s ease-in-out;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.sidebar-item {
+    -webkit-app-region: no-drag;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #555;
+    transition: all 0.2s;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.search-sidebar {
+    -webkit-app-region: no-drag;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin: 4px 8px 12px;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.search-sidebar:focus-within {
+    background: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.footer-btn {
+    -webkit-app-region: no-drag;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+    font-size: 12px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.search-sidebar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 13px;
+    width: 100%;
+}
+
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.calendar-header {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.month-nav-reworked {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.month-nav-reworked h2 {
+    font-size: 24px;
+    font-weight: 700;
+    min-width: 140px;
+    text-align: center;
+}
+
+.nav-arrow {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    background: #f0f0f0;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-size: 18px;
+}
+
+.nav-arrow:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    margin: 12px 0 6px;
+}
+
+.section-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #999;
+}
+
+.priority-label-active {
+    font-size: 11px;
+    color: var(--accent);
+    padding: 4px 12px 0;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.section-header-compact {
+    display: none;
+    /* 彻底移除侧边栏标题文本 */
+}
+
+.project-item {
+    padding-left: 10px !important;
+}
+
+.project-item span {
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.priority-block {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    -webkit-app-region: no-drag;
+}
+
+.priority-block:hover {
+    background: rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+}
+
+.priority-block.active {
+    background: #fff;
+    border-color: var(--p-color, #ddd);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-icon {
+    cursor: pointer;
+    color: var(--text-dim);
+    transition: all 0.2s;
+    -webkit-app-region: no-drag;
+}
+
+.sidebar-icon:hover {
+    color: var(--accent);
+}
+
+.sidebar-item {
+    -webkit-app-region: no-drag;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.sidebar-item:hover {
+    background: var(--bg-item-hover);
+}
+
+.sidebar-item.active {
+    background: var(--bg-item-active);
+    color: var(--text-primary);
+}
+
+.badge {
+    margin-left: auto;
+    background: var(--bg-item-hover);
+    color: var(--text-secondary);
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.sidebar-item-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 12px 0;
+    margin-bottom: -4px;
+    -webkit-app-region: no-drag;
+}
+
+.sidebar-add-icon {
+    cursor: pointer;
+    color: var(--text-dim);
+    transition: all 0.2s;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.sidebar-add-icon:hover {
+    background: var(--bg-item-hover);
+    color: var(--accent);
+}
+
+.add-trigger {
+    margin-bottom: 4px;
+    border: 1px dashed var(--accent-light);
+    background: rgba(var(--accent-rgb), 0.05);
+}
+
+.add-trigger:hover {
+    background: rgba(var(--accent-rgb), 0.1);
+    border-style: solid;
+}
+
+/* 标签创建表单样式 */
+.priority-create-box {
+    padding: 12px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+    border-radius: 12px;
+    margin: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: slideDown 0.2s ease-out;
+    z-index: 100;
+    -webkit-app-region: no-drag;
+    pointer-events: auto;
+}
+
+.priority-create-box input {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--text-primary);
+    outline: none;
+}
+
+.color-picker-grid {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.color-dot-opt {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: 2px solid transparent;
+}
+
+.color-dot-opt:hover {
+    transform: scale(1.2);
+}
+
+.color-dot-opt.active {
+    border-color: #fff;
+    box-shadow: 0 0 0 1px var(--accent);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.form-actions button {
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-confirm {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-cancel {
+    background: transparent;
+    color: var(--text-dim);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    display: flex;
+    gap: 8px;
+    padding: 0 4px;
+}
+
+.footer-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+    font-size: 12px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.footer-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.footer-btn.active {
+    background: #fff;
+    border-color: #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    color: #000;
+}
+
+/* List Styles */
+.list-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border-right: 1px solid var(--border-color);
+    overflow: hidden;
+    background: var(--bg-primary);
+}
+
+.day-todo-header,
+.generic-header {
+    background: var(--bg-primary);
+}
+
+.date-nav {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    -webkit-app-region: no-drag;
+}
+
+.date-item {
+    font-size: 13px;
+    color: var(--text-dim);
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+
+.date-item.active {
+    background: var(--accent);
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.current-date-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: var(--bg-item-hover);
+    padding: 6px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    -webkit-app-region: no-drag;
+}
+
+.current-date-label:hover {
+    background: var(--bg-item-active);
+    transform: translateY(-1px);
+}
+
+.add-task-hero {
+    padding: 24px 40px 12px;
+    /* 增加顶部间距，微调底部 */
+}
+
+.hero-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    /* 增加间距以平衡视觉 */
+    background: var(--bg-item-hover);
+    padding: 14px 20px;
+    border-radius: 12px;
+    transition: all 0.2s;
+    border: none;
+    position: relative;
+    z-index: 100;
+}
+
+.hero-input-wrapper:focus-within {
+    background: var(--bg-item-active);
+    box-shadow: 0 0 0 1.5px var(--accent-light), var(--shadow-soft);
+}
+
+/* 录入框标签选择器 */
+.input-priority-picker {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+
+.priority-popover {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: -10px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border-radius: 14px;
+    padding: 12px;
+    z-index: 200;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    animation: slideDown 0.2s ease-out;
+}
+
+.popover-option {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.popover-option:hover {
+    background: var(--bg-item-hover);
+    transform: scale(1.15);
+}
+
+.hero-input-wrapper input {
+    border: none;
+    background: transparent;
+    outline: none;
+    /* 移除黑色实线边框 */
+    font-size: 15px;
+    flex: 1;
+    color: var(--text-primary);
+}
+
+.task-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 40px;
+    /* 与 header/hero 对齐 */
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 20px 12px 40px;
+    /* 锁死对齐偏移：(40-20)+40 = 60px (中心轴 70px) */
+    margin: 0 -20px;
+    border-radius: 8px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background 0.2s;
+    color: var(--text-primary);
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    /* 绝对禁止挤压 */
+    -webkit-app-region: no-drag;
+}
+
+.subtask-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.subtask-row:hover {
+    background: var(--bg-item-hover);
+}
+
+.subtask-row span.completed {
+    color: #bbb;
+    text-decoration: line-through;
+}
+
+.sub-delete:hover {
+    opacity: 0.8 !important;
+    color: #ff3b30;
+}
+
+.nested-subtasks {
+    padding: 4px 0 8px 22px;
+    /* 关键：40 (scroll) + 22 = 62. 中心点 62 + 8 = 70px. 完美对齐！ */
+    overflow: hidden;
+}
+
+.subtask-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.sub-delete {
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity 0.2s;
+    -webkit-app-region: no-drag;
+}
+
+.subtask-row:hover .sub-delete {
+    opacity: 0.3;
+}
+
+.sub-delete:hover {
+    opacity: 0.8 !important;
+    color: #ff3b30;
+}
+
+.add-subtask-inline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    opacity: 0.6;
+}
+
+.add-subtask-inline input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 13px;
+    width: 100%;
+}
+
+.task-main-info span {
+    font-size: 15px;
+    color: #333;
+}
+
+.task-main-info span.completed {
+    color: #bbb;
+    text-decoration: line-through;
+}
+
+.subtasks-summary {
+    font-size: 11px;
+    color: #999;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.priority-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+/* Detail Styles */
+.detail-view {
+    width: 400px;
+    padding: 0 30px 60px;
+    /* 移除顶部 60px padding */
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-primary);
+}
+
+.detail-empty {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+}
+
+.empty-state {
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+    opacity: 0.2;
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 60px;
+    /* 在 header 内部设置 padding，确保 0-60px 区域也是 drag 属性覆盖 */
+    margin-bottom: 30px;
+    -webkit-app-region: drag;
+}
+
+.priority-selector,
+.delete-btn {
+    -webkit-app-region: no-drag;
+}
+
+.delete-btn {
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.delete-btn:hover {
+    background: rgba(255, 59, 48, 0.1);
+    color: #ff3b30;
+}
+
+.detail-content h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.detail-content h2.completed {
+    color: var(--text-secondary);
+    text-decoration: line-through;
+}
+
+.detail-section {
+    margin-bottom: 24px;
+}
+
+.detail-section label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.desc-editor {
+    width: 100%;
+    min-height: 100px;
+    border: 1px solid transparent;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: var(--radius-m);
+    padding: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    resize: vertical;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.desc-editor:focus {
+    background: white;
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.1);
+}
+
+.date-picker-minimal {
+    border: none;
+    background: rgba(0, 0, 0, 0.03);
+    padding: 8px 12px;
+    border-radius: var(--radius-m);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.date-picker-minimal:focus {
+    background: white;
+    box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+}
+
+/* Progress Tag - 已废弃，采用级联显示 */
+.task-progress {
+    font-size: 11px;
+    color: var(--text-secondary);
+    background: var(--border-light);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: auto;
+}
+
+/* Project Add Form */
+.project-add-container {
+    padding: 0 12px;
+}
+
+.project-add-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-m);
+    background: rgba(255, 255, 255, 0.5);
+    outline: none;
+    font-size: 13px;
+    margin-top: 10px;
+    color: var(--text-primary);
+}
+
+/* Layout */
+.app-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--bg-primary);
+}
+
+.content-area {
+    flex: 1;
+    display: flex;
+    background: var(--bg-primary);
+}
+
+#root {
+    backdrop-filter: var(--glass-blur);
+}
+
+/* Professional Calendar View */
+.calendar-view {
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-primary);
+}
+
+.list-header {
+    -webkit-app-region: drag;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.day-todo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px 10px;
+    gap: 40px;
+}
+
+.generic-header {
+    padding: 26px 40px 16px;
+}
+
+.view-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    -webkit-app-region: drag;
+    background: var(--bg-primary);
+}
+
+.month-nav,
+.today-btn {
+    -webkit-app-region: no-drag;
+}
+
+.month-nav h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    min-width: 120px;
+    text-align: center;
+}
+
+.month-nav button,
+.today-btn {
+    background: var(--bg-item-hover);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-secondary);
+    transition: background 0.2s;
+}
+
+.month-nav button:hover,
+.today-btn:hover {
+    background: var(--bg-item-active);
+}
+
+.calendar-grid-labels {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: var(--bg-sidebar);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.calendar-grid-labels div {
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-dim);
+}
+
+.calendar-grid-main {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    flex: 1;
+    background: var(--border-color);
+    gap: 1px;
+}
+
+.calendar-day-cell {
+    background: var(--bg-primary);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-height: 100px;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.calendar-day-cell:hover {
+    background: var(--bg-item-hover);
+}
+
+.calendar-day-cell.selected {
+    background: var(--accent-light);
+}
+
+.calendar-day-cell.other-month {
+    color: var(--text-dim);
+    background: var(--bg-sidebar);
+    opacity: 0.6;
+}
+
+.day-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.day-num {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.task-pill {
+    font-size: 11px;
+    padding: 2px 6px;
+    background: var(--bg-item-hover);
+    border-radius: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-left: 3px solid var(--accent);
+    color: var(--text-secondary);
+}
+
+.priority-selector {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: var(--bg-item-hover);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.detail-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 12px;
+    background: var(--bg-item-hover);
+    border-radius: 8px;
+}
+
+.detail-field label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.selected-day-tasks {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+}
+
+.task-mini-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background 0.2s;
+    color: var(--text-primary);
+}
+
+.task-mini-item:hover {
+    background: var(--bg-item-hover);
+}
+
+/* V7 & V7.1 核心增强样式 */
+.lunar {
+    font-size: 10px;
+    color: var(--text-dim);
+    font-weight: 400;
+}
+
+.trash-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+    -webkit-app-region: no-drag;
+}
+
+.action-icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.action-icon.restore:hover {
+    background: rgba(0, 168, 150, 0.1);
+    color: #00a896;
+}
+
+.action-icon.delete-perm:hover {
+    background: rgba(255, 59, 48, 0.1);
+    color: #ff3b30;
+}
+
+.p-dot {
+    width: 16px;
+    /* 略微加大，提升触感 */
+    height: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+}
+
+.p-dot:hover {
+    transform: scale(1.3);
+}
+
+.p-dot.active {
+    border-color: var(--text-primary);
+    box-shadow: 0 0 0 2px var(--bg-primary), 0 0 0 4px var(--accent), 0 4px 12px rgba(0, 168, 150, 0.2);
+    transform: scale(1.1);
+}
+
+.p-dot.none {
+    background: #ccc;
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+
+.p-dot.none::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    background: #fff;
+    top: 50%;
+    left: 0;
+    transform: rotate(45deg);
+}
